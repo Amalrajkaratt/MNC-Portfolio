@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin </title>
+    <!-- custom css file -->
+    <link rel="stylesheet" href="{% static 'css/cpw.css' %}">
+</head>
+<body>
+    <form class="formi" action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <section class="container forms" style="margin-top: 3em;">
+                <div class="form login">
+                    <div class="form-content">
+                        <header>Admin Job Edit</header>
+                        <form action="#">
+                            <div class="field input-field">
+                                <input type="file" name="Image" accept="image/*" id="id_Image" style="padding-top: 13px;padding-left: 25px;">
+                            </div>
+                            <div class="field input-field">
+                                <input type="number" name="OGP" value="123" required id="id_OGP">
+                            </div>
+      
+                            <div class="field input-field">
+                                <input type="number" name="CP" value="1234" required id="id_CP">
+                            </div>
+                            <div class="field input-field">
+                                <input type="number" name="SL" value="123" required id="id_SL">
+                            </div>
+      
+                            <div class="field input-field">
+                                <input type="number" name="HC" value="1234" required id="id_HC">
+                            </div>
+      
+                            <div class="alrt-msg">
+                            {% for msg in messages %}
+                            {{ msg }}
+                            {% endfor %}
+      
+                            </div>
+      
+                            <div class="field button-field">
+                              <input class="lg-btn"  type="submit" value="Save">
+      
+                            </div>
+                        </form>
+                    </div>
+      
+                </div>
+      
+               
+            </section>
+          </form>
+    </body>
+</html>

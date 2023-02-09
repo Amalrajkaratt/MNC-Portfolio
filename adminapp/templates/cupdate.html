@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC PORTFOLIO</title>
+    
+    <!-- custom css file -->
+    <link rel="stylesheet" href="{% static 'css/cpw.css' %}">
+  </head>
+ <body>
+
+  <form class="formi" action="" method="POST">
+    {% csrf_token %}
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Update</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="text" name="Name" placeholder="{{user.Name}}"  required id="id_Name">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="email" name="Email" placeholder="{{user.Email}}" required id="id_Email">
+                           
+                        </div>
+                        <div class="field input-field">
+                            <input type="number" name="ContactNumber" placeholder="{{user.ContactNumber}}" required id="id_ContactNumber">
+                        </div>
+                        <div class="alrt-msg">
+                        {% for msg in messages %}
+                        {{ msg }}
+                        {% endfor %}
+
+                        </div>
+
+                        <div class="field button-field">
+                          <input class="lg-btn"  type="submit" value="Save">
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+           
+        </section>
+      </form>
+
+    </body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css style link -->
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+    
+</head>
+<body>
+    <div class="cntc">
+        <div class="cntc1">
+            <h1 style="text-align: center; color: #fff;">Contact Us</h1>
+            <p style="text-align: center; color: #fff;padding-top: 14px;">Thank you for visiting our website. Kindly call or email us for any queries, concerns, or feedback.</p>
+        </div>
+
+        <div class="cntc-blk">
+            <div class="cntc-blk1">
+                <div class="part1">
+                <h2>Call Us</h2>
+                <p><h4>Helpline Number</h4></p>
+                <div>
+                    +85185435
+                </div>
+                <div>
+                    +9683425195
+                </div>  
+                </div>
+            </div>
+            <div class="cntc-blk2">
+                <div class="part2">
+                    <h2>Email Us</h2>
+                    <p><h4>For queries</h4></p>
+                    <div>
+                        infiniteglobal@contact.ac.in
+                    </div>
+                    <div>
+                        infiniteglobal@info.ac.in
+                    </div>                
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+{% endblock %}

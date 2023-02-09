@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC PORTFOLIO</title>
+    
+<!-- index page css -->
+<link rel="stylesheet" href="{% static 'css/service.css' %}" type="text/css">
+
+<!-- Bootstrap page -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <div class="service-body">
+
+      <div class="bst">
+        <h1 
+        class="bst1">Why We Are The Best</h1>
+      </div>
+      <div class="container-fluid">
+        <div class="col-sm-6">
+          <div class="ir-lp1">
+            Information Technology is one of the fastest-growing sectors worldwide.
+             It is easy to enter the industry without a college degree and offers 
+             opportunities in every sector. The IT industry offers quick employment 
+             and multiple career paths with high salaries. If you're interested in
+              working in an exciting, fast-paced industry that offers great opportunities
+               for professional success, then Information Technology may be the right option 
+               for you! Information Technology is a career field that offers many lucrative 
+               opportunities for those looking for their first job and for seasoned professionals.
+                Here is what makes it such an attractive and lucrative choice:
+          </div>
+            <ul class="lr-ip">
+              <li>Quick Employment</li>
+              <li>A Variety of Career Opportunities</li>
+              <li>Easy Career Growth</li>
+              <li>It Pays Well</li>
+              <li>A Reasonable Education</li>
+              <li>Low cost of Education</li>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+          <img class="srvc-img" src="{% static 'images/img7.jpg' %}" alt="">
+         
+        </div>
+      </div>
+
+      <div class="cr-msg">
+        {% for msg in messages %}
+        {{msg}}
+        {% endfor %} 
+    </div>
+
+      <div class="bsns">
+        <h2><a class="bsns-link" href="{% url 'app1:signup' %}" style="text-decoration: none;"> Click here  </a>To Start New Business </h2>
+        <h3><a href="{% url 'app1:login' %}" style="text-decoration: none;">Log in  </a>To See The Status</h3>
+      </div>     
+    </div>    
+</body>
+</html>

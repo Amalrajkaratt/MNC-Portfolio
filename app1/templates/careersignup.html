@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/careersgnp.css' %}">
+</head>
+<body>
+    <div class="crr-body">
+            <section class="career-sgnp">
+
+      <header>Registration Form</header>
+      <div class="sgnp-alt">
+        {% for msg in messages %}
+        {{msg}}
+        {% endfor %}
+        </div>
+  
+    <form class=" formi" action="" method="POST">
+        {% csrf_token %}
+        <div class="input-box">
+    
+    <label for="id_Name">Name</label>
+    <input type="text" name="Name" maxlength="16" required id="id_Name" placeholder="Full Name">
+        </div>
+    
+        <div class="input-box">
+
+    <label for="id_Email">Email</label>
+    <input type="email" name="Email" maxlength="254" required id="id_Email" placeholder="Email">
+        </div>
+
+        <div class="input-box">
+    
+    <label for="id_ContactNumber">Contact Number</label>
+    <input type="number" name="ContactNumber" required id="id_ContactNumber" placeholder="Number">
+
+        </div>     
+        <div class="column">
+
+            <div class="gender-box">
+                <label for="id_Gender" style="color: #333;">Gender</label>
+                <select name="Gender" required id="id_Gender" class="slt-box" style="border-radius: 6px;
+                margin-top: 5px;
+                padding: 0 105px;
+                outline: none;
+                font-size: 1rem;
+                color: #707070;
+                border: 1px solid #ddd;
+                height: 55px;
+                width: 19rem;">
+                <option value="" selected>Gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                </select>
+            </div>
+
+        <div class="input-box">
+
+    <label for="id_DOB">DOB</label>
+    <input type="date" name="DOB" required id="id_DOB">
+
+        </div>
+        </div>
+
+
+
+          <div class="input-box">
+      
+    <label for="id_Qualification">Qualification</label>
+    <input type="text" name="Qualification" maxlength="20" required id="id_Qualification" placeholder="Qualification">
+
+          </div>
+
+        <div class="input-box">
+
+    <label for="id_InstituteName">Institute  Name</label>    
+    <input type="text" name="InstituteName" maxlength="20" required id="id_InstituteName" placeholder="Institue/University">
+
+        </div>
+    
+        <div class="input-box">
+
+    <label for="id_YearOfPassing">Year Of Passing</label>  
+    <input type="number" name="YearOfPassing" required id="id_YearOfPassing" placeholder="Year Of Passing">
+      
+        </div>
+
+        <div class="input-box">
+
+    <label for="id_Password">Password</label> 
+    <input type="password" name="Password" maxlength="8" minlength="6" required id="id_Password" placeholder="Password">
+
+        </div>
+
+        <div class="input-box">
+
+    <label for="id_ConfirmPassword">Confirm Password</label>
+    <input type="password" name="ConfirmPassword" maxlength="8" minlength="6" required id="id_ConfirmPassword" placeholder="Confirm Password">
+
+        </div>
+
+    <input  type="submit" class="submit-btn" value="Save">
+    <p style="text-align: center;margin-top: 10px;font-size: 15px;">Already registered.? <a href="{% url 'app1:clogin' %}">Login</a></p>
+    </form>
+
+    </section>
+    </div>
+
+</body>
+</html>
+{% endblock %}

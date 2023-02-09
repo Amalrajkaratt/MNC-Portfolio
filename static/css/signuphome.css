@@ -1,0 +1,21 @@
+.msg {
+    font-size: 25px;
+    font-weight: 200;
+    text-align: start;
+    color: green;
+}
+.connect h1, h3, p {
+    text-align: center;
+    font-family: inherit;
+    font-weight: normal;
+    /* color: darkgreen; */
+}
+.bck{
+    text-align: center;
+    text-decoration: none;
+}
+.connect {
+    width: 100%;
+    height: 331px;
+    margin-top: 150px;
+}

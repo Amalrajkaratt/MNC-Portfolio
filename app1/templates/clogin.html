@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MNC PORTFOLIO</title>
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  </head>
+ <body>
+
+  <form class="formi" action="" method="POST">
+    {% csrf_token %}
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Login</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" name="Email" maxlength="254" required id="Email" placeholder="Email" class="input">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" name="Password" maxlength="8" required id="id_Password" placeholder="Password" class="password">
+                           
+                        </div>
+                        <div class="alrt-msg">
+                        {% for msg in messages %}
+                        {{ msg }}
+                        {% endfor %}
+
+                        </div>
+                        
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
+
+                        <div class="field button-field">
+                          <input class="lg-btn"  type="submit" value="Log in">
+
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="{% url 'app1:careersignup' %}" class="link signup-link">Signup</a></span>
+                    </div>
+                </div>
+
+            </div>
+           
+        </section>
+      </form>
+
+    </body>
+</html>

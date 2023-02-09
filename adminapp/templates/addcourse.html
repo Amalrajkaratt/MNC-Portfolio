@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+        <!-- custom css file -->
+        <link rel="stylesheet" href="{% static 'css/cpw.css' %}">
+</head>
+<body>
+    <form class="formi" action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <section class="container forms" style="margin-top: 3em;">
+                <div class="form login">
+                    <div class="form-content">
+                        <header>Admin Course Add</header>
+                        <form action="#">
+                            <div class="field input-field">
+                                <input type="file" name="Photo" accept="image/*" id="id_Photo" style="padding-top: 13px;
+                                padding-left: 25px;">
+                            </div>
+    
+                            <div class="field input-field">
+                                <input type="text" name="Course" maxlength="20" placeholder="Course" required id="id_Course">                    
+                            </div>
+                            <div class="field input-field">
+                                <input type="text" name="Name" placeholder="Name" maxlength="20" required id="id_Name">
+                            </div>
+    
+                            <div class="alrt-msg">
+                            {% for msg in messages %}
+                            {{ msg }}
+                            {% endfor %}
+    
+                            </div>
+    
+                            <div class="field button-field">
+                              <input class="lg-btn"  type="submit" value="Save">
+    
+                            </div>
+                        </form>
+                    </div>
+    
+                </div>
+    
+               
+            </section>
+          </form>
+    
+</body>
+</html>
+

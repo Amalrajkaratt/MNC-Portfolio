@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC PORTFOLIO</title>
+
+    <!-- custom css style -->
+    <link rel="stylesheet" href="{% static 'css/loginhome.css' %}">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+    
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    
+        <!-- Libraries Stylesheet -->
+        <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+    
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+            <a href="{% url 'app1:index' %}" class="navbar-brand ml-lg-3">
+                <img src="{% static 'images/logo.png' %}" style="width: 100px;" alt="">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                    <a href="{% url 'app1:index' %}" class="nav-item nav-link ">Home</a>
+                    <a href="{% url 'app1:about' %}" class="nav-item nav-link">About</a>
+                    <a href="{% url 'app1:service' %}" class="nav-item nav-link">Service</a>
+                    <a href="{% url 'app1:careers' %}" class="nav-item nav-link">Career</a>
+                    <a href="{% url 'app1:contact' %}" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="{% url 'app1:logout' %}" style="display: flex;flex-direction: row-reverse; font-size: 1.5em;text-decoration: dotted;">Logout</a>  
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+    <div class="col-sm-6">
+            <div class="msg">
+        {% for msg in messages %}
+    {{ msg }}
+    {% endfor %}
+    </div>
+    </div>
+    <!-- <div class="col-sm-6">
+        <table style="border:1px striped yellow;">
+        <tr>
+            <th>
+                Name
+            </th>
+            <td>
+                :
+            </td>
+            <td>
+                {{user.Name}}
+
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Designation
+            </th>
+            <td>
+                :
+            </td>
+            <td>
+                {{user.Designation}}
+
+            </td>
+        </tr>
+        <tr>
+            <th>
+                COMPANY NAME
+            </th>
+            <td>
+                :
+            </td>
+            <td>
+                {{user.CompanyName}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                EMAIL
+            </th>
+            <td>
+                :
+            </td>
+            <td>
+                {{user.ContactEmail}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                NUMBER
+            </th>
+            <td>
+                :
+            </td>
+            <td>
+                {{user.ContactNumber}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Service Type
+            </th>
+            <td>
+                :
+            </td>
+            <td>
+                {{user.ServiceType}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Contact Details
+            </th>
+            <td>
+                :
+            </td>
+            <td>
+                {{user.ServiceDetails}}
+            </td>
+        </tr>
+    </table>
+    </div> -->
+
+    <h1 class="lg-wrk"><span> WE ARE WORKING WITH YOUR PROJECT</span><br>
+        YOU WILL BE CONTACED WHEN IT IS DONE</h1>   
+    <!-- Footer Start -->
+    <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5">
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <a href="{% url 'app1:index' %}" class="navbar-brand">
+                        <h1 class="mt-n2 text-uppercase text-white"><img src="{% static 'images/logo.png' %}"  style="width: 100px;" alt="">INFINITE G ltd.</h1>
+                    </a>
+                    <p class="m-0">Shape the future of technology</p>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <form action="{% url 'app1:mail' %}" method="POST">
+                        {% csrf_token %}
+                    <h3 class="text-white mb-4">Feedbacks</h3>
+                    <div class="w-100">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-light" style="padding: 30px;" name="contact_message" placeholder="Feedbacks">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-4">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <h3 class="text-white mb-4">Get In Touch</h3>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>123 COMPLEX,ABC STREET,BANGALORE</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+123 3645631656</p>
+                    <p><i class="fa fa-envelope mr-2"></i>infiniteglobal@contact.ac.in</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a>
+                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
+                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-linkedin-in"></i></a>
+                        <a class="text-white" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <h3 class="text-white mb-4">Our Services</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Web Development</a>
+                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Development</a>
+                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Marketing</a>
+                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Research</a>
+                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>SEO</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <h3 class="text-white mb-4">Quick Links</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white-50 mb-2" href="{% url 'app1:index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                        <a class="text-white-50 mb-2" href="{% url 'app1:about' %}"><i class="fa fa-angle-right mr-2"></i>About</a>
+                        <a class="text-white-50 mb-2" href="{% url 'app1:service' %}"><i class="fa fa-angle-right mr-2"></i>Service</a>
+                        <a class="text-white-50 mb-2" href="{% url 'app1:careers' %}"><i class="fa fa-angle-right mr-2"></i>Career</a>
+                        <a class="text-white-50" href="{% url 'app1:contact' %}"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white-50 border-top py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0">Copyright &copy; <a class="text-white" href="#">Infinity</a>. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <p class="m-0">Designed by <a class="text-white" href="https://htmlcodex.com">Avatar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+</body>
+</html>

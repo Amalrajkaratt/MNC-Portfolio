@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/career.css' %}">
+</head>
+<body>
+    <div class="crr-body">
+        <h1>
+            We're more than a workplace<br> We're a family
+        </h1>
+        <div>
+        <p>We know that finding a meaningful and rewarding career can be a long journey. Our goal is to make that process easy for you and to create a work environment that's enriching—one that you'll look forward to every day.</p>    
+        </div>
+        <div class="join">
+             
+        </div>
+        <div class="lnk">
+            <a style="text-decoration: none;" class="lnk1" href="{% url 'app1:careersignup' %}">Signup</a>
+            <a style="text-decoration: none;" class="lnk1" href="{% url 'app1:clogin' %}">Login</a>
+        </div>
+        <div class="cr-msg">
+        {% for msg in messages %}
+        {{msg}}
+        {% endfor %} 
+    </div>
+    </div>
+</body>
+</html>
+{% endblock %}

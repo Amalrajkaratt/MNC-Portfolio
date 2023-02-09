@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC PORTFOLIO</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- index page css -->
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+
+</head>
+<body>
+    <div class="sgnp-full-body">
+        <div class="col-sm-6">
+             <div class="sgnp-body">
+      <header>Registration Form</header>
+      <div class="sgnp-alt">
+      {% for msg in messages %}
+      {{msg}}
+      {% endfor %}
+      </div>
+
+      <form action="" class="formi" method="POST">
+        {% csrf_token %}
+        <div class="input-box">
+            <label for="id_Name">Full Name</label>
+            <input class="inpt" type="text" name="Name" maxlength="16" placeholder="Full Name" required id="id_Name">
+        </div>
+
+        <div class="input-box">
+            <label for="id_Designation">Designation</label>        
+        <input class="inpt" type="text" name="Designation" maxlength="16" required placeholder="Designation" id="id_Designation">
+        </div>
+
+        <div class="input-box">
+            <label for="id_CompanyName">Company Name</label>
+        <input class="inpt" type="text" name="CompanyName" maxlength="20" required placeholder="Company Name" id="id_CompanyName">
+        </div>
+
+        <div class="input-box">
+            <label for="id_ContactEmail">Contact Email</label>
+            <input class="inpt" type="email" name="ContactEmail" maxlength="254" placeholder="Contact Email" required id="id_ContactEmail">
+        </div>
+
+        <div class="input-box">
+            <label for="id_ContactNumber">Contact Number</label>    
+            <input class="inpt" type="number" name="ContactNumber" required placeholder="Contact Number" id="id_ContactNumber">
+        </div>
+
+        <div class="input-box">
+            <label for="id_ServiceType">Service Type</label>
+            <input class="inpt" type="text" name="ServiceType" maxlength="15" placeholder="Service Type" required id="id_ServiceType">                
+        </div>
+
+        <div class="input-box">
+            <label for="id_ServiceDetails">Service Details</label>
+            <input class="inpt" type="text" name="ServiceDetails" maxlength="200" placeholder="Service In Details" required id="id_ServiceDetails">
+        </div>
+
+        <div class="input-box">
+            <label for="id_Password">Password</label>
+            <input class="inpt" type="password" name="Password" maxlength="8" minlength="6" placeholder="Password" required id="id_Password">
+        </div>
+
+        <div class="input-box">
+            <label for="id_ConfirmPassword">Confirm Password</label>
+            <input class="inpt" type="password" name="ConfirmPassword" maxlength="8" minlength="6" placeholder="Confirm Password" required id="id_ConfirmPassword">
+        </div>
+
+        <input class="submit-btn" type="submit" value="Start Business">
+
+      </form>
+    </div>
+        </div>
+        <div class="col-sm-6">
+            <img class="sgup-img" src="{% static 'images/img11.jpg'%}" alt="">
+            <div class="smdl">
+                <h2>
+                    Connecting with the right team is the best step in business<br>
+                    You are 1 step away from that
+                </h2>
+            </div>
+            <div class="sgnup-lg">
+                <h3>Already enqiured.?</h3><a class="sgnp-lgn" href="{% url 'app1:login' %}">Login</a>
+            </div>
+        </div>
+       
+    </div>
+    
+  </body>
+</html>

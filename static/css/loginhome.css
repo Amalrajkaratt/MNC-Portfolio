@@ -1,0 +1,17 @@
+.msg {
+    font-size: 25px;
+    font-weight: 200;
+    text-align: start;
+    color: green;
+}
+.lg-wrk {
+    font-weight: 400;
+    font-size: 2em;
+    text-align: center;
+    color: darkgreen;
+    padding-top: 160px;
+    margin-bottom: 5em;
+}
+.lg-wrk span{
+    font-size: 2em;
+}

@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.service-body {
+    height: 950px;
+    padding-top: 20px;
+    background-color: #ddd
+}
+.bst1 {
+    text-align: center;
+    color: black;
+    font-weight: initial;
+    font-variant-caps: all-small-caps;
+    font-size: 56px;
+    font-family: fangsong;
+}
+.lr-ip {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-size: 20px;
+    letter-spacing: 0px;
+    flex-wrap: nowrap;
+    padding-left: 20%;
+}
+.ir-lp1{
+    font-size: 25px;
+}
+.srvc-img{
+    width: 100%;
+}
+@media (min-width: 768px){
+.col-sm-6{
+    width: 50%;
+    padding: 0;
+    }
+}
+.bsns{
+    text-align: center;
+    margin-top: 82px;
+}
+.bsns h2{
+    color: black;
+    font-weight: 900;
+}
+.bsns .bsns-link{
+    color: deepskyblue;
+    transition: .3s;
+}
+.bsns .bsns-link:hover{
+    color: deeppink;
+    transition: .3s;
+}
+.bsns h3 {
+    padding-top: 10px;
+    font-weight: inherit;
+}
+.bsns h3 a{
+    color: deepskyblue;
+}
+.bsns h3 a:hover{
+    color: deeppink;
+}
+.cr-msg {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 2em;
+    color: green;
+    font-weight: bold;
+}

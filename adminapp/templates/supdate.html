@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC PORTFOLIO</title>
+    
+    <!-- custom css file -->
+    <link rel="stylesheet" href="{% static 'css/cpw.css' %}">
+  </head>
+ <body>
+
+  <form class="formi" action="" method="POST">
+    {% csrf_token %}
+        <section class="container forms" style="margin-top: 3em;">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Admin Control</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="text" name="Name" value="{{user.Name}}"   maxlength="16" required id="id_Name">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="text" name="Designation" value="{{user.Designation}}"  maxlength="16" required id="id_Designation">
+                           
+                        </div>
+                        <div class="field input-field">
+                            <input type="text" name="CompanyName" value="{{user.CompanyName}}"   maxlength="20" required id="id_CompanyName">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="email" name="ContactEmail" value="{{user.ContactEmail}}"  maxlength="254" required id="id_ContactEmail">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="number" name="ContactNumber" value="{{user.ContactNumber}}"  required id="id_ContactNumber">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="text" name="ServiceType" value="{{user.ServiceType}}"   maxlength="15" required id="id_ServiceType">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="text" name="ServiceDetails" value="{{user.ServiceDetails}}"   maxlength="200" required id="id_ServiceDetails">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="text" name="Password" value="{{user.Password}}"   maxlength="8" required id="id_Password">
+                        </div>
+
+                        <div class="alrt-msg">
+                        {% for msg in messages %}
+                        {{ msg }}
+                        {% endfor %}
+
+                        </div>
+
+                        <div class="field button-field">
+                          <input class="lg-btn"  type="submit" value="Save">
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+           
+        </section>
+      </form>
+
+        
+    </body>
+</html>

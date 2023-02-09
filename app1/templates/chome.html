@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MNC PORTFOLIO</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/chome.css' %}">
+</head>
+<body>
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+
+    <div class="col-sm-12">
+        <div class="cr-links">
+            <a style="color:deeppink;" href="{% url 'app1:index' %}" class="nav-item nav-link ">Home</a> /
+            <a style="color:deeppink;" href="{% url 'app1:changepassword' user.id %}">Change password</a> /
+            <a style="color:deeppink;" href="{% url 'app1:cupdate' user.id %}">Edit Profile</a> / 
+            <a style="color:deeppink;" href="{% url 'app1:logout' %}">Logout</a> 
+        </div>
+
+    </div>
+    <div class="careers-body">
+        <div class="col-sm-8">
+            <h1>Build Your Career With Us</h1>
+        </div>
+
+        <img src="{% static 'images/careers.png' %}" alt="">
+                <div class="jobs container">
+                    <div class="row">
+            {% for user in job %}
+                    <div class="col-sm-4">
+                        <div class="cp"><h3><a href="">{{user.Title}}</a><p>{{user.Location}}</p></h3>
+                        {{user.Decsription}} <a href=""> more..</a>
+                        <p class="dd">{{user.Date}}</p> 
+                    </div>
+                    </div> 
+            {% endfor %}
+                    </div>
+        </div>
+        <p style="color: slategray;margin-top: 2em;">Email job title to <span style="color: blueviolet;text-decoration: underline;">hr@infinitegltd.ac.in</span> </p>
+    </div>
+</body>
+</html>
